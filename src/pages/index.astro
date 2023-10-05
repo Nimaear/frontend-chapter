@@ -1,0 +1,37 @@
+---
+import { ComviqCard } from "../components/ComviqCard";
+import type { ComviqProduct, Tele2Product } from "../components/ProductCard/ProductCardContext";
+import { Tele2Card } from "../components/Tele2Card";
+import { Grid } from "../components/Grid/Grid";
+import { comviqTheme } from "../globalTheme.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const comviqProduct: ComviqProduct = {
+  //image: "http://placekitten.com/200/300",
+  url: "http://placekitten.com/200/300",
+  title: "Test Product",
+  colors: ["red", "green", "blue"],
+};
+
+const tele2Product: Tele2Product = {
+  url: "http://placekitten.com/200/300",
+  title: "Tele2 Product",
+  colors: ["pink", "magenta"],
+  image: "http://placekitten.com/250/350",
+};
+---
+
+<BaseLayout title="Product card test">
+  <Grid className={comviqTheme}>
+    <ComviqCard product={comviqProduct} />
+    <ComviqCard product={comviqProduct} />
+    <ComviqCard product={comviqProduct} />
+    <ComviqCard product={comviqProduct} />
+  </Grid>
+  <Grid>
+    <Tele2Card product={tele2Product} />
+    <Tele2Card product={tele2Product} />
+    <Tele2Card product={tele2Product} />
+    <Tele2Card product={tele2Product} />
+  </Grid>
+</BaseLayout>
